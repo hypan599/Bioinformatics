@@ -1,6 +1,12 @@
 # -*- coding:utf-8 -*-
 from sys import argv
-script, input_file_name, length, overlap, result_file_name = argv
+try:
+    script, input_file_name, length, overlap, result_file_name = argv
+except IndexError:
+    print """how to use:
+    python Sequence_split.py in.fasta length overlap out.fasta
+    please give enough parameter to run this program"""
+    exit()
 
 
 def read_fasta(file_item):
